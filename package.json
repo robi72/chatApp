@@ -1,0 +1,20 @@
+{
+  "name": "chatapp",
+  "version": "1.0.0",
+  "description": "This is the chat app project work which made by Ropert and Samer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robi72/chatApp.git"
+  },
+  "author": "Ropert and Samer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robi72/chatApp/issues"
+  },
+  "homepage": "https://github.com/robi72/chatApp#readme"
+}
