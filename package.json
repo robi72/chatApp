@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/robi72/chatApp/issues"
   },
-  "homepage": "https://github.com/robi72/chatApp#readme"
+  "homepage": "https://github.com/robi72/chatApp#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
 }
