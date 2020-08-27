@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 
 io.sockets.on("connection", function (socket) {
   connections.push(socket);
-  console.log('Connected:' + connections.length + 'sockets connected', );
+  console.log('Connected: %s sockets connected', connections.length);
 
   // Disconnect
   
