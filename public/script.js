@@ -37,6 +37,8 @@ $(function() {
     
         $username.val('');
       });
+
+
     
       socket.on('get users', function (data) {
         var html = '';
@@ -45,6 +47,17 @@ $(function() {
           $users.html(html);
         }
       });
+     
+      $message.on('keypress', function() {
+        socket.emit('typing', {
+          user: socket.$username
+        })
+      })
 
-      
+      socket.on('typing', function (data) {
+        $typingOut.html('<strong>' + data.user + '</strong>:' + ' is typing...');
+        setTimeout(function() {
+          $typingOut.html('');
+        }, 3000)
+      })
 });

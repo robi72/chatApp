@@ -54,4 +54,9 @@ io.sockets.on("connection", function (socket) {
     io.sockets.emit('get users', users);
   }
   
+  // Is typing....
+  
+  socket.on('typing', function(data) {
+    socket.broadcast.emit('typing', {user: socket.username})
+  })
 });
