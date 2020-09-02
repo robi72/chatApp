@@ -9,6 +9,7 @@ $(function() {
     var $users = $('#users');
     var $username = $('#username');
     var $typingOut = $('#typingOut')
+    var $scrollArea = $('#scrollArea')
 
     $messageForm.submit(function(e){
         e.preventDefault();
@@ -20,6 +21,9 @@ $(function() {
     });
 
     socket.on("new message", function (data) {
+      
+      $scrollArea.animate({scrollTop: $scrollArea.prop("scrollHeight")}, 500);
+
       if (data.msg === "/happy") {
         console.log("Happy");
         $chat.append(
@@ -49,13 +53,7 @@ $(function() {
             "</div>"
         );
       } else {
-        $chat.append(
-          '<div class="well well-sm"><strong>' +
-            data.user +
-            "</strong>:" +
-            data.msg +
-            "</div>"
-        );
+        $chat.append('<div class="well well-sm"><strong>' +data.user +"</strong>:" +data.msg +"</div>");
       }
     });
     
