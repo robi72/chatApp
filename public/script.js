@@ -19,10 +19,46 @@ $(function() {
 
     });
 
-    socket.on('new message', function(data) {
-        $chat.append('<div class="well well-sm"><strong>'+data.user+'</strong>:' + data.msg + '</div>');
+    socket.on("new message", function (data) {
+      if (data.msg === "/happy") {
+        console.log("Happy");
+        $chat.append(
+          '<div class="well"><strong>' +
+            data.user +
+            '</strong>:<img src="' +
+            "https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif" +
+            '" width=50 height=50/>' +
+            "</div>"
+        );
+      } else if (data.msg === "/sad") {
+        $chat.append(
+          '<div class="well"><strong>' +
+            data.user +
+            '</strong>:<img src="' +
+            "https://media.giphy.com/media/KyGGoxa3eTCWW0lOkU/giphy.gif" +
+            '" width=50 height=50/>' +
+            "</div>"
+        );
+      } else if (data.msg === "/angry") {
+        $chat.append(
+          '<div class="well"><strong>' +
+            data.user +
+            '</strong>:<img src="' +
+            "https://media.giphy.com/media/11tTNkNy1SdXGg/giphy.gif" +
+            '" width=50 height=50/>' +
+            "</div>"
+        );
+      } else {
+        $chat.append(
+          '<div class="well well-sm"><strong>' +
+            data.user +
+            "</strong>:" +
+            data.msg +
+            "</div>"
+        );
+      }
     });
-
+    
     $userFormArea.submit(function (e) {
         e.preventDefault();
         socket.emit('new user', $username.val(), function (data) {

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./style.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    
+    <script src="./commands.js"></script>
   </head>
   <body>
     <div class="container">
@@ -42,8 +42,16 @@
             <div class="bottom">
               <label> Enter Message</label>
               <div class="typingOut"></div>
-              <textarea class="form-control" id="message" required ></textarea>
+              <textarea class="form-control" id="message" required oninput="showCommands()" ></textarea>
               <input type="submit" class="btn btn-primary" value="Send Message">
+              <div id="commands" class="p-2" hidden>
+                <ul>
+                    <p>List of commands:</p>
+                    <li>/angry</li>
+                    <li>/happy</li>
+                    <li>/sad</li>
+                </ul>
+            </div>
             </div>
           </form>
         </div>
