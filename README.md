@@ -2,7 +2,7 @@
 
 
 ## This app was created by:
-Samer and Robert based on socket.io technology.
+Samer and Robert based on socket.io in the client side and node.js in the server side technologies.
 
 ## For installing and runing the app:
 
