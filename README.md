@@ -6,7 +6,7 @@ Samer and Robert based on socket.io technology.
 
 ## For installing and runing the app:
 
-1- First of all you need to install the npm by: npm i.
+1- First of all you need to install dependences by: npm i.
 
 2- Then write node server in the terminal to run the app.
 
